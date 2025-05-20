@@ -1,0 +1,36 @@
+
+public class Bicycle
+{
+    public string Color { get; set; }   
+    public double Weight { get; set; }
+    public double Wheelbase { get; set; } 
+    public string Model { get; set; }   
+    public decimal Price { get; set; }   
+
+    public Bicycle(string color, double weight, double wheelbase, string model, decimal price)
+    {
+        Color = color;
+        Weight = weight;
+        Wheelbase = wheelbase;
+        Model = model;
+        Price = price;
+    }
+}
+
+public class RacingBike : Bicycle
+{
+    public int GearCount { get; set; } 
+
+
+    public RacingBike(string color, double weight, double wheelbase, string model, decimal price, int gearCount)
+        : base(color, weight, wheelbase, model, price)
+    {
+        GearCount = gearCount;
+    }
+
+    public void DisplayBikeInfo()
+    {
+        Console.WriteLine($"車型: {Model}, 顏色: {Color}, 車重: {Weight}kg");
+        Console.WriteLine($"輪距: {Wheelbase}cm, 價格: {Price:C}, 變速段數: {GearCount}");
+    }
+}
